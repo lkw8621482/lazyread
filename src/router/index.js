@@ -8,15 +8,19 @@ Router.prototype.push = function push(location) {
 
 Vue.use(Router)
 
-import Tingba from "../pages/tingba"
-import Mine from "../pages/mine"
-import Find from "../pages/find"
-import Acount from "../pages/acount"
+
 
 //二级路由
 import Recommend from "../pages/tingindex/recommend"
 import Publish from "../pages/tingindex/publish"
 import Original from "../pages/tingindex/original"
+import Gengxin from "../pages/minindex/gengxin.vue"
+import Xiangting from "../pages/minindex/xiangting.vue"
+import Tingyou from "../pages/minindex/tingyou.vue"
+
+//传值
+import Vipdetail from "../pages/vipdetail"
+import Reader from "../pages/reader"
 
 export default new Router({
   routes: [{
@@ -40,12 +44,31 @@ export default new Router({
     }]
   }, {
     path: '/mine',
-    component: Mine
+    component: Mine,
+    children: [{
+      path: "/",
+      redirect: "gengxin"
+    }, {
+      path: "gengxin",
+      component: Gengxin
+    }, {
+      path: "xiangting",
+      component: Xiangting
+    }, {
+      path: "tingyou",
+      component: Tingyou
+    }]
   }, {
     path: '/find',
     component: Find
   }, {
     path: '/acount',
     component: Acount
+  }, {
+    path: '/vipdetail/',
+    component: Vipdetail
+  }, {
+    path: '/reader/',
+    component: Reader
   }, ]
 })

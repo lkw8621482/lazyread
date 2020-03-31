@@ -1,10 +1,10 @@
 <template>
-  <div class="vip">vip</div>
+  <div class="xiangting">xiangting</div>
 </template>
 
 <script>
 export default {
-  name: "vip"
+  name: "xiangting"
 };
 </script>
 

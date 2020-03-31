@@ -1,6 +1,6 @@
 <template>
   <div class="newbar">
-    <p class="hotp">
+    <p class="hotp" v-if="bol">
       <span class="mrtj1">{{title}}</span>
       <span class="gd1">更多</span>
     </p>
@@ -13,7 +13,7 @@
 <script>
 export default {
   name: "newbar",
-  props: ["title"]
+  props: ["title", "bol"]
 };
 </script>
 

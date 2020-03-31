@@ -1,5 +1,5 @@
 <template>
-  <div class="swiper">
+  <div class="swiper" :class="{margin:bol}">
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <!-- <div class="swiper-slide" v-for="item in dataList" :key="item.id">
@@ -16,13 +16,14 @@
 <script>
 import Swiper from "swiper";
 export default {
-  name: "swiperList"
+  name: "swiperList",
+  props: ["bol"]
 };
 </script>
 
 <style lang="scss">
 @import "swiper/css/swiper.min.css";
-.swiper {
+.margin {
   margin-top: 20px;
 }
 .swiper-container {

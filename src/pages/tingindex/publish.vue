@@ -10,7 +10,7 @@
         <span>筛选</span>
       </div>
     </search>
-    <swiperList>
+    <swiperList bol="true">
       <div class="swiper-slide" slot="slide1" v-for="item in dataList" :key="item.id">
         <img :src="item.url" alt />
       </div>

@@ -1,7 +1,12 @@
 <template>
   <div class="navbar">
     <div class="bar1">
-      <navitem v-for="item in dataList" :key="item.id" :title="item.title">
+      <navitem
+        v-for="item in dataList"
+        :key="item.id"
+        :title="item.title"
+        @click.native="fn(item.id)"
+      >
         <img slot="img1" :src="item.url" alt />
       </navitem>
     </div>
@@ -22,6 +27,16 @@ export default {
       this.dataList = res;
       // console.log(this.dataList);
     });
+  },
+  methods: {
+    fn(id) {
+      if (id == 1) {
+        this.$router.push("/vipdetail");
+      }
+      if (id == 2) {
+        this.$router.push("/reader");
+      }
+    }
   }
 };
 </script>
@@ -31,7 +46,7 @@ export default {
   width: 100%;
   height: 5rem;
   padding: 10px;
-  background: rgb(26, 26, 26);  
+  background: rgb(26, 26, 26);
   border-radius: 10px;
   margin-top: 1rem;
   .bar1 {
@@ -39,7 +54,6 @@ export default {
     height: 100%;
     display: flex;
     outline: px solid red;
-    
   }
 }
 </style>
